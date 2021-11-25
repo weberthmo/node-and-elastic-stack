@@ -4,12 +4,12 @@
 
 ## 💻 Sobre o projeto
 
-#### Criação de aplicação em Node que fará rotina básica de CRUD no Elasticsearch
-#### Subir aplicação em Node com APM Agent para coletar estatísticas da aplicação e enviar para o APM Server
-#### Configuração APM Server para receber métricas do APM Agent e enviar para o Elasticsearch
-#### Configuração Elasticsearch para receber os dados do APM e as interações da aplicação Node
-#### Configuração Kibana para consumir os dados do Elasticsearch com 5 visualizações
-#### 1 nó de Elasticsearch
+ Criação de aplicação em Node que fará rotina básica de CRUD no Elasticsearch
+ Subir aplicação em Node com APM Agent para coletar estatísticas da aplicação e enviar para o APM Server
+ Configuração APM Server para receber métricas do APM Agent e enviar para o Elasticsearch
+ Configuração Elasticsearch para receber os dados do APM e as interações da aplicação Node
+ Configuração Kibana para consumir os dados do Elasticsearch com 5 visualizações
+ 1 nó de Elasticsearch
 
 ## 🛠 Tecnologias
 
