@@ -4,12 +4,12 @@
 
 ## 💻 Sobre o projeto
 
-###Criação de aplicação em Node que fará rotina básica de CRUD no Elasticsearch;
-###Subir aplicação em Node com APM Agent para coletar estatísticas da aplicação e enviar para o APM Server;
-###Configuração APM Server para receber métricas do APM Agent e enviar para o Elasticsearch;
-###Configuração Elasticsearch para receber os dados do APM e as interações da aplicação Node;
-###Configuração Kibana para consumir os dados do Elasticsearch com 5 visualizações
-###1 nó de Elasticsearch
+### Criação de aplicação em Node que fará rotina básica de CRUD no Elasticsearch
+### Subir aplicação em Node com APM Agent para coletar estatísticas da aplicação e enviar para o APM Server
+### Configuração APM Server para receber métricas do APM Agent e enviar para o Elasticsearch
+### Configuração Elasticsearch para receber os dados do APM e as interações da aplicação Node
+### Configuração Kibana para consumir os dados do Elasticsearch com 5 visualizações
+### 1 nó de Elasticsearch
 
 ## 🛠 Tecnologias
 
@@ -50,14 +50,11 @@ $ yarn dev
 <h4>Kibana na porta:5601 - acesse http://localhost:5601/</h4>
 <h4>APM na porta:8200 - acesse http://localhost:8200/</h4>
 
-1. Subindo Backend
-2. Subindo API
-
 <h4 align="center"> 
 	Estudo de caso | Rotinas (Node) 🚀 
 </h4>
 
-Feito com ❤️ por Weberth Moreira de Oliveira 👋🏽 [Entre em contato!](https://api.whatsapp.com/send?phone=5562982083372)
+Feito por Weberth Moreira de Oliveira 👋🏽 [Entre em contato!](https://api.whatsapp.com/send?phone=5562982083372)
 
 [Nodejs]: https://nodejs.org/
 [Elasticsearch]: https://www.elastic.co/pt/elasticsearch/
