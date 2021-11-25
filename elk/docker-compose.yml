@@ -1,0 +1,71 @@
+version: '3'
+
+services:
+   ###elasticsearch###
+  Elasticsearch:
+    image: elasticsearch:7.12.1
+    container_name: Elasticsearch
+    ports:
+      - '9200:9200'
+      - '22:22'
+    environment:
+      - discovery.type=single-node
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    networks:
+      - api-note-elasticStack
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:        
+    - ./elasticData:/usr/share/elasticsearch/data
+  
+  kibana:
+    image: kibana:7.12.1
+    container_name: kibana
+    depends_on:
+      - Elasticsearch
+    environment:
+     - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+      - "discovery.zen.ping.unicast.hosts=elasticsearch"
+    networks:
+      - api-note-elasticStack
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+      - ./kibana:/usr/share/kibana/data
+    ports:
+      - '5601:5601'
+
+###setup_apm_server###
+  setup_apm_server:
+    image: docker.elastic.co/apm/apm-server:7.12.1
+    container_name: setup_apm_server
+    volumes: ['./docker-setup-apm-server.sh:/usr/local/bin/setup-beat.sh:ro']
+    command: ['/bin/bash', '-c', 'cat /usr/local/bin/setup-beat.sh | tr -d "\r" | bash -s apm-server']
+    depends_on:
+      - Elasticsearch
+      - kibana
+
+  ###apm_server###
+  apm-server:
+    image: docker.elastic.co/apm/apm-server:7.15.2
+    container_name: apm-server
+    depends_on:
+      - Elasticsearch
+      - kibana
+      - setup_apm_server
+    networks:
+      - api-note-elasticStack
+    ports:
+      - 127.0.0.1:8200:8200
+    command: -e -E 'output.elasticsearch.password=kibana'
+    # depends_on: ['Elasticsearch','setup_apm_server']
+
+
+networks:
+  api-note-elasticStack:
+    driver: bridge

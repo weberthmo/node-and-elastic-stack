@@ -1,0 +1,27 @@
+{
+  "name": "rotinas-node",
+  "version": "1.0.0",
+  "description": "Estudo de caso | Rotinas (Node)",
+  "main": "index.js",
+  "scripts": {
+    "prestart": "npm install",
+    "dev": "nodemon index.js",
+    "start": "node index.js"
+  },
+  "keywords": [
+    "swagger"
+  ],
+  "license": "Unlicense",
+  "private": true,
+  "dependencies": {
+    "@elastic/elasticsearch": "^7.7.1",
+    "connect": "^3.2.0",
+    "elastic-apm-node": "^3.24.0",
+    "elasticsearch": "^16.7.2",
+    "elasticsearchclient": "^0.5.3",
+    "express": "^4.17.1",
+    "js-yaml": "^3.3.0",
+    "nodemon": "^2.0.15",
+    "swagger-tools": "0.10.1"
+  }
+}
